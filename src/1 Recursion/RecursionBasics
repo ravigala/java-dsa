@@ -1,0 +1,68 @@
+public class RecursionBasics{
+
+    // Print numbers in descreasing order
+    public static void printDec(int n){
+        // base case
+        if(n == 1){
+            System.out.print(n);
+            return;
+        }
+        System.out.print(n + " ");
+        printDec(n - 1);
+    }
+
+
+    // Print numbers in increasing order
+    public static void printInc(int n){
+        if(n == 1){
+            System.out.print(n + " ");
+            return;
+        }
+        printInc(n - 1);
+        System.out.print(n + " ");
+    }
+
+    // Factorial of N 
+    // Time complexity: O(n) Space complexity: O(n)
+    public static int fact(int n){
+        if(n == 0 || n == 1){
+            return 1;
+        }
+        int fact = n * fact(n-1);
+        return fact;
+    }
+
+
+    // Print sum of first N natural numbers
+    // Time complexity: O(n) Space complexity: O(n)
+    public static int sum(int n){
+        if(n == 1){
+            return 1;
+        }
+
+        int sum = n + sum(n-1);
+        return sum;
+    }
+
+
+    // Print Nth Fibonacci number
+    // Time complexity: O(2^n) Space complexity: O(n)
+    public static int fib(int n){
+        if(n==0 || n==1){
+            return n;
+        }
+
+        int fib = fib(n-1) + fib(n-2);
+        return fib;
+    }
+
+    public static void main(String[] args){
+        // printDec(10);
+        // printInc(10);
+        // System.out.println(fact(5));
+        // System.out.println(sum(5));
+
+        System.out.println(fib(5));
+
+    }
+}
